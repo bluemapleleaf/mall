@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.macro.mall.oms.mapper.OmsOrderMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.macro.mall.oms.model.OmsOrder">
+        <id column="id" property="id" />
+        <result column="member_id" property="memberId" />
+        <result column="coupon_id" property="couponId" />
+        <result column="order_sn" property="orderSn" />
+        <result column="create_time" property="createTime" />
+        <result column="member_username" property="memberUsername" />
+        <result column="total_amount" property="totalAmount" />
+        <result column="pay_amount" property="payAmount" />
+        <result column="freight_amount" property="freightAmount" />
+        <result column="promotion_amount" property="promotionAmount" />
+        <result column="integration_amount" property="integrationAmount" />
+        <result column="coupon_amount" property="couponAmount" />
+        <result column="discount_amount" property="discountAmount" />
+        <result column="pay_type" property="payType" />
+        <result column="source_type" property="sourceType" />
+        <result column="status" property="status" />
+        <result column="order_type" property="orderType" />
+        <result column="delivery_company" property="deliveryCompany" />
+        <result column="delivery_sn" property="deliverySn" />
+        <result column="auto_confirm_day" property="autoConfirmDay" />
+        <result column="integration" property="integration" />
+        <result column="growth" property="growth" />
+        <result column="promotion_info" property="promotionInfo" />
+        <result column="bill_type" property="billType" />
+        <result column="bill_header" property="billHeader" />
+        <result column="bill_content" property="billContent" />
+        <result column="bill_receiver_phone" property="billReceiverPhone" />
+        <result column="bill_receiver_email" property="billReceiverEmail" />
+        <result column="receiver_name" property="receiverName" />
+        <result column="receiver_phone" property="receiverPhone" />
+        <result column="receiver_post_code" property="receiverPostCode" />
+        <result column="receiver_province" property="receiverProvince" />
+        <result column="receiver_city" property="receiverCity" />
+        <result column="receiver_region" property="receiverRegion" />
+        <result column="receiver_detail_address" property="receiverDetailAddress" />
+        <result column="note" property="note" />
+        <result column="confirm_status" property="confirmStatus" />
+        <result column="delete_status" property="deleteStatus" />
+        <result column="use_integration" property="useIntegration" />
+        <result column="payment_time" property="paymentTime" />
+        <result column="delivery_time" property="deliveryTime" />
+        <result column="receive_time" property="receiveTime" />
+        <result column="comment_time" property="commentTime" />
+        <result column="modify_time" property="modifyTime" />
+    </resultMap>
+
+    <resultMap id="orderDetailResultMap" type="com.macro.mall.oms.dto.OmsOrderDetail" extends="com.macro.mall.oms.mapper.OmsOrderMapper.BaseResultMap">
+        <collection property="orderItemList" resultMap="com.macro.mall.oms.mapper.OmsOrderItemMapper.BaseResultMap" columnPrefix="item_"/>
+        <collection property="historyList" resultMap="com.macro.mall.oms.mapper.OmsOrderOperateHistoryMapper.BaseResultMap" columnPrefix="history_"/>
+    </resultMap>
+    <select id="getDetail" resultMap="orderDetailResultMap">
+        SELECT o.*,
+            oi.id item_id,
+            oi.product_id item_product_id,
+            oi.product_sn item_product_sn,
+            oi.product_pic item_product_pic,
+            oi.product_name item_product_name,
+            oi.product_brand item_product_brand,
+            oi.product_price item_product_price,
+            oi.product_quantity item_product_quantity,
+            oi.product_attr item_product_attr,
+            oh.id history_id,
+            oh.operate_man history_operate_man,
+            oh.create_time history_create_time,
+            oh.order_status history_order_status,
+            oh.note history_note
+        FROM
+            oms_order o
+            LEFT JOIN oms_order_item oi ON o.id = oi.order_id
+            LEFT JOIN oms_order_operate_history oh ON o.id = oh.order_id
+        WHERE
+            o.id = #{id}
+        ORDER BY oi.id ASC,oh.create_time DESC
+    </select>
+
+    <resultMap id="orderDetailMap" type="com.macro.mall.oms.domain.OmsOrderDetailPortal"
+               extends="com.macro.mall.oms.mapper.OmsOrderMapper.BaseResultMap">
+        <collection property="orderItemList" columnPrefix="ot_"
+                    resultMap="com.macro.mall.oms.mapper.OmsOrderItemMapper.BaseResultMap">
+        </collection>
+    </resultMap>
+    <select id="getDetailPortal" resultMap="orderDetailMap">
+        SELECT
+            o.id,
+            o.order_sn,
+            o.coupon_id,
+            o.integration,
+            o.member_id,
+            ot.id ot_id,
+            ot.product_name ot_product_name,
+            ot.product_sku_id ot_product_sku_id,
+            ot.product_sku_code ot_product_sku_code,
+            ot.product_quantity ot_product_quantity
+        FROM
+            oms_order o
+            LEFT JOIN oms_order_item ot ON o.id = ot.order_id
+        WHERE
+            o.id = #{orderId}
+    </select>
+
+    <select id="getTimeOutOrders" resultMap="orderDetailMap">
+        SELECT
+            o.id,
+            o.order_sn,
+            o.coupon_id,
+            o.integration,
+            o.member_id,
+            o.use_integration,
+            ot.id               ot_id,
+            ot.product_name     ot_product_name,
+            ot.product_sku_id   ot_product_sku_id,
+            ot.product_sku_code ot_product_sku_code,
+            ot.product_quantity ot_product_quantity
+        FROM
+            oms_order o
+            LEFT JOIN oms_order_item ot ON o.id = ot.order_id
+        WHERE
+            o.status = 0
+            AND o.create_time &lt; date_add(NOW(), INTERVAL -#{minute} MINUTE);
+    </select>
+</mapper>
