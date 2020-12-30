@@ -1,5 +1,7 @@
 package com.macro.mall.sms.mapper;
 
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.macro.mall.sms.dto.FlashPromotionProduct;
 import com.macro.mall.sms.dto.SmsFlashPromotionProduct;
 import com.macro.mall.sms.model.SmsFlashPromotionProductRelation;
@@ -20,7 +22,7 @@ public interface SmsFlashPromotionProductRelationMapper extends BaseMapper<SmsFl
     /**
      * 获取限时购及相关商品信息
      */
-    List<SmsFlashPromotionProduct> getList(@Param("flashPromotionId") Long flashPromotionId, @Param("flashPromotionSessionId") Long flashPromotionSessionId);
+    Page<SmsFlashPromotionProduct> getList(IPage<?> page, @Param("flashPromotionId") Long flashPromotionId, @Param("flashPromotionSessionId") Long flashPromotionSessionId);
 
     /**
      * 获取秒杀商品

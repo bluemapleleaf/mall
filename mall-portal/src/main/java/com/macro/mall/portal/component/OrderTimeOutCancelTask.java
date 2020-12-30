@@ -1,19 +1,20 @@
 package com.macro.mall.portal.component;
 
 import com.macro.mall.portal.service.OmsPortalOrderService;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 /**
- * Created by macro on 2018/8/24.
+ *
+ * @author dongjb
+ * @date 2020/11/30
  * 订单超时取消并解锁库存的定时器
  */
+@Slf4j
 @Component
 public class OrderTimeOutCancelTask {
-    private Logger LOGGER =LoggerFactory.getLogger(OrderTimeOutCancelTask.class);
     @Autowired
     private OmsPortalOrderService portalOrderService;
 
@@ -24,6 +25,6 @@ public class OrderTimeOutCancelTask {
     @Scheduled(cron = "0 0/10 * ? * ?")
     private void cancelTimeOutOrder(){
         Integer count = portalOrderService.cancelTimeOutOrder();
-        LOGGER.info("取消订单，并根据sku编号释放锁定库存，取消订单数量：{}",count);
+        log.info("取消订单，并根据sku编号释放锁定库存，取消订单数量：{}",count);
     }
 }

@@ -1,5 +1,6 @@
 package com.macro.mall.service;
 
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.macro.mall.sms.model.SmsHomeAdvertise;
 import com.macro.mall.sms.service.SmsHomeAdvertiseRepository;
 
@@ -38,5 +39,5 @@ public interface SmsHomeAdvertiseService extends SmsHomeAdvertiseRepository {
     /**
      * 分页查询广告
      */
-    List<SmsHomeAdvertise> list(String name, Integer type, String endTime, Integer pageSize, Integer pageNum);
+    Page<SmsHomeAdvertise> list(String name, Integer type, String endTime, Integer pageSize, Integer pageNum);
 }

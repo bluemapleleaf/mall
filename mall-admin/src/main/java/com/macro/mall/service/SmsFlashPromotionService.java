@@ -1,5 +1,6 @@
 package com.macro.mall.service;
 
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.macro.mall.sms.model.SmsFlashPromotion;
 import com.macro.mall.sms.service.SmsFlashPromotionRepository;
 
@@ -38,5 +39,5 @@ public interface SmsFlashPromotionService extends SmsFlashPromotionRepository {
     /**
      * 分页查询活动
      */
-    List<SmsFlashPromotion> list(String keyword, Integer pageSize, Integer pageNum);
+    Page<SmsFlashPromotion> list(String keyword, Integer pageSize, Integer pageNum);
 }

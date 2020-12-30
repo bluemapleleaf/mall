@@ -34,8 +34,8 @@ public class PmsSkuStockRepositoryImpl extends ServiceImpl<PmsSkuStockMapper, Pm
      * 解除取消订单的库存锁定
      */
     @Override
-    public int releaseSkuStockLock(List<OmsOrderItem> orderItemList){
-        return skuStockMapper.releaseSkuStockLock(orderItemList);
+    public void releaseSkuStockLock(List<OmsOrderItem> orderItemList){
+        skuStockMapper.releaseSkuStockLock(orderItemList);
     }
 
 }

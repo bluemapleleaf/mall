@@ -1,8 +1,6 @@
 package com.macro.mall.demo.config;
 
-import com.macro.mall.demo.bo.AdminUserDetails;
 import com.macro.mall.service.UmsAdminService;
-import com.macro.mall.ums.model.UmsAdmin;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -23,7 +21,7 @@ import java.util.List;
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
-    @Autowired
+//    @Autowired
     private UmsAdminService umsAdminService;
 
     @Override

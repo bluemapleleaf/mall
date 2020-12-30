@@ -2,7 +2,6 @@ package com.macro.mall.controller;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.macro.mall.common.api.CommonPage;
-import com.macro.mall.common.api.CommonPagePlus;
 import com.macro.mall.common.api.CommonResult;
 import com.macro.mall.pms.dto.PmsProductAttributeCategoryItem;
 import com.macro.mall.pms.model.PmsProductAttributeCategory;
@@ -75,7 +74,7 @@ public class PmsProductAttributeCategoryController {
     @ResponseBody
     public CommonResult<CommonPage<PmsProductAttributeCategory>> getList(@RequestParam(defaultValue = "5") Integer pageSize, @RequestParam(defaultValue = "1") Integer pageNum) {
         Page<PmsProductAttributeCategory> productAttributeCategoryList = productAttributeCategoryService.getList(pageSize, pageNum);
-        return CommonResult.success(CommonPagePlus.restPage(productAttributeCategoryList));
+        return CommonResult.success(CommonPage.restPage(productAttributeCategoryList));
     }
 
     @ApiOperation("获取所有商品属性分类及其下属性")

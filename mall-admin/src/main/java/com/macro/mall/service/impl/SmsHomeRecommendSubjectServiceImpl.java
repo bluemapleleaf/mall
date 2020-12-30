@@ -50,7 +50,7 @@ public class SmsHomeRecommendSubjectServiceImpl extends SmsHomeRecommendSubjectR
     }
 
     @Override
-    public List<SmsHomeRecommendSubject> list(String subjectName, Integer recommendStatus, Integer pageSize, Integer pageNum) {
+    public Page<SmsHomeRecommendSubject> list(String subjectName, Integer recommendStatus, Integer pageSize, Integer pageNum) {
         Page<SmsHomeRecommendSubject> page = new Page<>(pageNum, pageSize);
         LambdaQueryWrapper<SmsHomeRecommendSubject> lambda = new LambdaQueryWrapper<>();
         if(!StringUtils.isEmpty(subjectName)){
@@ -60,6 +60,6 @@ public class SmsHomeRecommendSubjectServiceImpl extends SmsHomeRecommendSubjectR
             lambda.eq(SmsHomeRecommendSubject::getRecommendStatus, recommendStatus);
         }
         lambda.orderByDesc(SmsHomeRecommendSubject::getSort);
-        return list(lambda);
+        return page(page, lambda);
     }
 }

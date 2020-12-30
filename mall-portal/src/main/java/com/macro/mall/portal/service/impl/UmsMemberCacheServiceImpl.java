@@ -5,15 +5,15 @@ import com.macro.mall.portal.service.UmsMemberCacheService;
 import com.macro.mall.portal.service.UmsMemberService;
 import com.macro.mall.security.annotation.CacheException;
 import com.macro.mall.ums.model.UmsMember;
-import com.macro.mall.ums.service.UmsMemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 /**
  * UmsMemberCacheService实现类
- * Created by macro on 2020/3/14.
+ *
+ * @author dongjb
+ * @date 2020/11/30
  */
 @Service
 public class UmsMemberCacheServiceImpl implements UmsMemberCacheService {

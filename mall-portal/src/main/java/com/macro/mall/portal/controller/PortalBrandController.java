@@ -1,7 +1,6 @@
 package com.macro.mall.portal.controller;
 
 import com.macro.mall.common.api.CommonPage;
-import com.macro.mall.common.api.CommonPagePlus;
 import com.macro.mall.common.api.CommonResult;
 import com.macro.mall.pms.model.PmsBrand;
 import com.macro.mall.pms.model.PmsProduct;

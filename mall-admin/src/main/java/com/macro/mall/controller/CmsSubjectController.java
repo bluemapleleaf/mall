@@ -2,7 +2,6 @@ package com.macro.mall.controller;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.macro.mall.common.api.CommonPage;
-import com.macro.mall.common.api.CommonPagePlus;
 import com.macro.mall.common.api.CommonResult;
 import com.macro.mall.cms.model.CmsSubject;
 import com.macro.mall.service.CmsSubjectService;
@@ -43,6 +42,6 @@ public class CmsSubjectController {
                                                         @RequestParam(value = "pageNum", defaultValue = "1") Integer pageNum,
                                                         @RequestParam(value = "pageSize", defaultValue = "5") Integer pageSize) {
         Page<CmsSubject> subjectList = subjectService.list(keyword, pageNum, pageSize);
-        return CommonResult.success(CommonPagePlus.restPage(subjectList));
+        return CommonResult.success(CommonPage.restPage(subjectList));
     }
 }

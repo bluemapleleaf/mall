@@ -1,5 +1,6 @@
 package com.macro.mall.service;
 
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.macro.mall.sms.model.SmsHomeRecommendSubject;
 import com.macro.mall.sms.service.SmsHomeRecommendSubjectRepository;
 import org.springframework.transaction.annotation.Transactional;
@@ -35,5 +36,5 @@ public interface SmsHomeRecommendSubjectService extends SmsHomeRecommendSubjectR
     /**
      * 分页查询推荐
      */
-    List<SmsHomeRecommendSubject> list(String subjectName, Integer recommendStatus, Integer pageSize, Integer pageNum);
+    Page<SmsHomeRecommendSubject> list(String subjectName, Integer recommendStatus, Integer pageSize, Integer pageNum);
 }

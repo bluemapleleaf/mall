@@ -20,7 +20,9 @@ import java.util.Map;
 
 /**
  * 会员登录注册管理Controller
- * Created by macro on 2018/8/3.
+ *
+ * @author dongjb
+ * @date 2020/11/30
  */
 @Controller
 @Api(tags = "UmsMemberController", description = "会员登录注册管理")
@@ -53,7 +55,7 @@ public class UmsMemberController {
         if (token == null) {
             return CommonResult.validateFailed("用户名或密码错误");
         }
-        Map<String, String> tokenMap = new HashMap<>();
+        Map<String, String> tokenMap = new HashMap<>(8);
         tokenMap.put("token", token);
         tokenMap.put("tokenHead", tokenHead);
         return CommonResult.success(tokenMap);

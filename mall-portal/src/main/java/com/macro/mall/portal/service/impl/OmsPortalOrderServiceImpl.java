@@ -4,7 +4,7 @@ import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.collection.CollUtil;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
-import com.github.pagehelper.PageHelper;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.macro.mall.common.api.CommonPage;
 import com.macro.mall.common.exception.Asserts;
 import com.macro.mall.common.service.RedisService;
@@ -43,7 +43,9 @@ import java.util.stream.Collectors;
 
 /**
  * 前台订单管理Service
- * Created by macro on 2018/8/30.
+ *
+ * @author dongjb
+ * @date 2020/11/30
  */
 @Service
 public class OmsPortalOrderServiceImpl implements OmsPortalOrderService {
@@ -361,7 +363,7 @@ public class OmsPortalOrderServiceImpl implements OmsPortalOrderService {
             status = null;
         }
         UmsMember member = memberService.getCurrentMember();
-        PageHelper.startPage(pageNum,pageSize);
+        Page<OmsOrder> page = new Page<>(pageNum,pageSize);
 
         LambdaQueryWrapper<OmsOrder> lambda = new LambdaQueryWrapper<>();
         lambda.eq(OmsOrder::getDeleteStatus, 0);
@@ -369,7 +371,7 @@ public class OmsPortalOrderServiceImpl implements OmsPortalOrderService {
             lambda.eq(OmsOrder::getStatus, status);
         }
         lambda.orderByDesc(OmsOrder::getCreateTime);
-        List<OmsOrder> orderList = orderRepository.list(lambda);
+        Page<OmsOrder> orderList = orderRepository.page(page, lambda);
         CommonPage<OmsOrder> orderPage = CommonPage.restPage(orderList);
         //设置分页信息
         CommonPage<OmsOrderDetailPortal> resultPage = new CommonPage<>();
@@ -377,17 +379,17 @@ public class OmsPortalOrderServiceImpl implements OmsPortalOrderService {
         resultPage.setPageSize(orderPage.getPageSize());
         resultPage.setTotal(orderPage.getTotal());
         resultPage.setTotalPage(orderPage.getTotalPage());
-        if(CollUtil.isEmpty(orderList)){
+        if(CollUtil.isEmpty(orderList.getRecords())){
             return resultPage;
         }
         //设置数据信息
-        List<Long> orderIds = orderList.stream().map(OmsOrder::getId).collect(Collectors.toList());
+        List<Long> orderIds = orderList.getRecords().stream().map(OmsOrder::getId).collect(Collectors.toList());
 
         LambdaQueryWrapper<OmsOrderItem> lambdaItem = new LambdaQueryWrapper<>();
         lambdaItem.in(OmsOrderItem::getOrderId, orderIds);
         List<OmsOrderItem> orderItemList = orderItemRepository.list(lambdaItem);
         List<OmsOrderDetailPortal> orderDetailList = new ArrayList<>();
-        for (OmsOrder omsOrder : orderList) {
+        for (OmsOrder omsOrder : orderList.getRecords()) {
             OmsOrderDetailPortal orderDetail = new OmsOrderDetailPortal();
             BeanUtil.copyProperties(omsOrder,orderDetail);
             List<OmsOrderItem> relatedItemList = orderItemList.stream().filter(item -> item.getOrderId().equals(orderDetail.getId())).collect(Collectors.toList());

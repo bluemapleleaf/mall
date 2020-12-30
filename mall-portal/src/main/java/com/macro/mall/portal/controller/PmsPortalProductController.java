@@ -2,7 +2,6 @@ package com.macro.mall.portal.controller;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.macro.mall.common.api.CommonPage;
-import com.macro.mall.common.api.CommonPagePlus;
 import com.macro.mall.common.api.CommonResult;
 import com.macro.mall.pms.model.PmsProduct;
 import com.macro.mall.portal.domain.PmsPortalProductDetail;
@@ -41,7 +40,7 @@ public class PmsPortalProductController {
                                                        @RequestParam(required = false, defaultValue = "5") Integer pageSize,
                                                        @RequestParam(required = false, defaultValue = "0") Integer sort) {
         Page<PmsProduct> productList = portalProductService.search(keyword, brandId, productCategoryId, pageNum, pageSize, sort);
-        return CommonResult.success(CommonPagePlus.restPage(productList));
+        return CommonResult.success(CommonPage.restPage(productList));
     }
 
     @ApiOperation("以树形结构获取所有商品分类")

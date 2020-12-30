@@ -3,11 +3,9 @@ package com.macro.mall.service.impl;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.github.pagehelper.PageHelper;
 import com.macro.mall.service.SmsHomeBrandService;
 import com.macro.mall.sms.model.SmsHomeBrand;
 import com.macro.mall.sms.service.impl.SmsHomeBrandRepositoryImpl;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
@@ -51,7 +49,7 @@ public class SmsHomeBrandServiceImpl extends SmsHomeBrandRepositoryImpl implemen
     }
 
     @Override
-    public List<SmsHomeBrand> list(String brandName, Integer recommendStatus, Integer pageSize, Integer pageNum) {
+    public Page<SmsHomeBrand> list(String brandName, Integer recommendStatus, Integer pageSize, Integer pageNum) {
         Page<SmsHomeBrand> page = new Page<>(pageNum, pageSize);
         LambdaQueryWrapper<SmsHomeBrand> lambda = new LambdaQueryWrapper<>();
         if(!StringUtils.isEmpty(brandName)){
@@ -61,6 +59,6 @@ public class SmsHomeBrandServiceImpl extends SmsHomeBrandRepositoryImpl implemen
             lambda.eq(SmsHomeBrand::getRecommendStatus, recommendStatus);
         }
         lambda.orderByDesc(SmsHomeBrand::getSort);
-        return list(lambda);
+        return page(page, lambda);
     }
 }

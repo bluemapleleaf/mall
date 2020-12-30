@@ -3,7 +3,6 @@ package com.macro.mall.pms.service;
 import com.macro.mall.oms.model.OmsOrderItem;
 import com.macro.mall.pms.model.PmsSkuStock;
 import com.baomidou.mybatisplus.extension.service.IService;
-import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -18,12 +17,15 @@ import java.util.List;
 public interface PmsSkuStockRepository extends IService<PmsSkuStock> {
     /**
      * 修改 pms_sku_stock表的锁定库存及真实库存
+     * @param orderItemList 订单行
+     * @return 是否成功
      */
     int updateSkuStock(List<OmsOrderItem> orderItemList);
 
     /**
      * 解除取消订单的库存锁定
+     * @param orderItemList 订单行
      */
-    int releaseSkuStockLock(List<OmsOrderItem> orderItemList);
+    void releaseSkuStockLock(List<OmsOrderItem> orderItemList);
 
 }

@@ -79,7 +79,7 @@ public class SmsFlashPromotionSessionController {
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult<List<SmsFlashPromotionSession>> list() {
-        List<SmsFlashPromotionSession> promotionSessionList = flashPromotionSessionService.list();
+        List<SmsFlashPromotionSession> promotionSessionList = flashPromotionSessionService.listAll();
         return CommonResult.success(promotionSessionList);
     }
 

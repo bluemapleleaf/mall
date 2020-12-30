@@ -2,7 +2,6 @@ package com.macro.mall.controller;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.macro.mall.common.api.CommonPage;
-import com.macro.mall.common.api.CommonPagePlus;
 import com.macro.mall.common.api.CommonResult;
 import com.macro.mall.dto.PmsProductQueryParam;
 import com.macro.mall.pms.dto.PmsProductParam;
@@ -67,7 +66,7 @@ public class PmsProductController {
                                                         @RequestParam(value = "pageSize", defaultValue = "5") Integer pageSize,
                                                         @RequestParam(value = "pageNum", defaultValue = "1") Integer pageNum) {
         Page<PmsProduct> productList = productService.list(productQueryParam, pageSize, pageNum);
-        return CommonResult.success(CommonPagePlus.restPage(productList));
+        return CommonResult.success(CommonPage.restPage(productList));
     }
 
     @ApiOperation("根据商品名称或货号模糊查询")

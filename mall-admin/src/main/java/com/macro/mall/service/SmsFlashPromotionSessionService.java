@@ -39,7 +39,7 @@ public interface SmsFlashPromotionSessionService extends SmsFlashPromotionSessio
     /**
      * 根据启用状态获取场次列表
      */
-    List<SmsFlashPromotionSession> list();
+    List<SmsFlashPromotionSession> listAll();
 
     /**
      * 获取全部可选场次及其数量

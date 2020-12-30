@@ -1,8 +1,7 @@
 package com.macro.mall.portal.component;
 
 import com.macro.mall.portal.domain.QueueEnum;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.AmqpException;
 import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.amqp.core.Message;
@@ -12,11 +11,13 @@ import org.springframework.stereotype.Component;
 
 /**
  * 取消订单消息的生产者
- * Created by macro on 2018/9/14.
+ *
+ * @author dongjb
+ * @date 2020/11/30
  */
 @Component
+@Slf4j
 public class CancelOrderSender {
-    private static Logger LOGGER =LoggerFactory.getLogger(CancelOrderSender.class);
     @Autowired
     private AmqpTemplate amqpTemplate;
 
@@ -30,6 +31,6 @@ public class CancelOrderSender {
                 return message;
             }
         });
-        LOGGER.info("send orderId:{}",orderId);
+        log.info("send orderId:{}",orderId);
     }
 }

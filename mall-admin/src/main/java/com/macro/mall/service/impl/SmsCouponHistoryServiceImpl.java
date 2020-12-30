@@ -19,7 +19,7 @@ import java.util.List;
 @Service
 public class SmsCouponHistoryServiceImpl extends SmsCouponHistoryRepositoryImpl implements SmsCouponHistoryService {
     @Override
-    public List<SmsCouponHistory> list(Long couponId, Integer useStatus, String orderSn, Integer pageSize, Integer pageNum) {
+    public Page<SmsCouponHistory> list(Long couponId, Integer useStatus, String orderSn, Integer pageSize, Integer pageNum) {
         Page<SmsCouponHistory> page = new Page<>(pageNum, pageSize);
         LambdaQueryWrapper<SmsCouponHistory> lambda = new LambdaQueryWrapper<>();
         if(couponId!=null){
@@ -31,6 +31,6 @@ public class SmsCouponHistoryServiceImpl extends SmsCouponHistoryRepositoryImpl 
         if(!StringUtils.isEmpty(orderSn)){
             lambda.eq(SmsCouponHistory::getOrderSn, orderSn);
         }
-        return list(lambda);
+        return page(page, lambda);
     }
 }

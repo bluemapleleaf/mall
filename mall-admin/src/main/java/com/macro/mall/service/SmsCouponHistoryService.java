@@ -1,5 +1,6 @@
 package com.macro.mall.service;
 
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.macro.mall.sms.model.SmsCouponHistory;
 import com.macro.mall.sms.service.SmsCouponHistoryRepository;
 
@@ -16,5 +17,5 @@ public interface SmsCouponHistoryService extends SmsCouponHistoryRepository {
      * @param useStatus 使用状态
      * @param orderSn 使用订单号码
      */
-    List<SmsCouponHistory> list(Long couponId, Integer useStatus, String orderSn, Integer pageSize, Integer pageNum);
+    Page<SmsCouponHistory> list(Long couponId, Integer useStatus, String orderSn, Integer pageSize, Integer pageNum);
 }

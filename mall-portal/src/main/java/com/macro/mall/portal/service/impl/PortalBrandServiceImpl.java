@@ -3,7 +3,6 @@ package com.macro.mall.portal.service.impl;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.macro.mall.common.api.CommonPage;
-import com.macro.mall.common.api.CommonPagePlus;
 import com.macro.mall.pms.model.PmsBrand;
 import com.macro.mall.pms.model.PmsProduct;
 import com.macro.mall.pms.service.PmsProductRepository;
@@ -41,6 +40,6 @@ public class PortalBrandServiceImpl extends PmsBrandRepositoryImpl implements Po
         lambda.eq(PmsProduct::getDeleteStatus, 0);
         lambda.eq(PmsProduct::getBrandId, brandId);
         Page<PmsProduct> productList = productRepository.page(page, lambda);
-        return CommonPagePlus.restPage(productList);
+        return CommonPage.restPage(productList);
     }
 }

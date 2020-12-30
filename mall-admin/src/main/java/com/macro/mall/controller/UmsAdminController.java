@@ -3,7 +3,6 @@ package com.macro.mall.controller;
 import cn.hutool.core.collection.CollUtil;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.macro.mall.common.api.CommonPage;
-import com.macro.mall.common.api.CommonPagePlus;
 import com.macro.mall.common.api.CommonResult;
 import com.macro.mall.dto.UmsAdminLoginParam;
 import com.macro.mall.dto.UmsAdminParam;
@@ -124,7 +123,7 @@ public class UmsAdminController {
                                                    @RequestParam(value = "pageSize", defaultValue = "5") Integer pageSize,
                                                    @RequestParam(value = "pageNum", defaultValue = "1") Integer pageNum) {
         Page<UmsAdmin> adminList = adminService.list(keyword, pageSize, pageNum);
-        return CommonResult.success(CommonPagePlus.restPage(adminList));
+        return CommonResult.success(CommonPage.restPage(adminList));
     }
 
     @ApiOperation("获取指定用户信息")

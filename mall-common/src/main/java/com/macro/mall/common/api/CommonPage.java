@@ -1,54 +1,41 @@
 package com.macro.mall.common.api;
 
-import com.github.pagehelper.PageInfo;
-import org.springframework.data.domain.Page;
+import cn.hutool.core.convert.Convert;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+
 
 import java.util.List;
 
 /**
  * 分页数据封装类
- * Created by macro on 2019/4/19.
+ *
+ * @author dongjb
+ * @date 2020/11/19
  */
 public class CommonPage<T> {
-    /**
-     * 当前页码
-     */
     private Integer pageNum;
-    /**
-     * 每页数量
-     */
     private Integer pageSize;
-    /**
-     * 总页数
-     */
     private Integer totalPage;
-    /**
-     * 总条数
-     */
     private Long total;
-    /**
-     * 分页数据
-     */
     private List<T> list;
 
     /**
-     * 将PageHelper分页后的list转为分页信息
+     * 将MyBatis Plus 分页结果转化为通用结果
      */
-    public static <T> CommonPage<T> restPage(List<T> list) {
-        CommonPage<T> result = new CommonPage<T>();
-        PageInfo<T> pageInfo = new PageInfo<T>(list);
-        result.setTotalPage(pageInfo.getPages());
-        result.setPageNum(pageInfo.getPageNum());
-        result.setPageSize(pageInfo.getPageSize());
-        result.setTotal(pageInfo.getTotal());
-        result.setList(pageInfo.getList());
+    public static <T> CommonPage<T> restPage(Page<T> pageResult) {
+        CommonPage<T> result = new CommonPage<>();
+        result.setPageNum(Convert.toInt(pageResult.getCurrent()));
+        result.setPageSize(Convert.toInt(pageResult.getSize()));
+        result.setTotal(pageResult.getTotal());
+        result.setTotalPage(Convert.toInt(pageResult.getTotal()/pageResult.getSize()+1));
+        result.setList(pageResult.getRecords());
         return result;
     }
 
     /**
      * 将SpringData分页后的list转为分页信息
      */
-    public static <T> CommonPage<T> restPage(Page<T> pageInfo) {
+    public static <T> CommonPage<T> restPage(org.springframework.data.domain.Page<T> pageInfo) {
         CommonPage<T> result = new CommonPage<T>();
         result.setTotalPage(pageInfo.getTotalPages());
         result.setPageNum(pageInfo.getNumber());

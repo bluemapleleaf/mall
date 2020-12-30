@@ -53,7 +53,7 @@ public class SmsHomeAdvertiseServiceImpl extends SmsHomeAdvertiseRepositoryImpl 
     }
 
     @Override
-    public List<SmsHomeAdvertise> list(String name, Integer type, String endTime, Integer pageSize, Integer pageNum) {
+    public Page<SmsHomeAdvertise> list(String name, Integer type, String endTime, Integer pageSize, Integer pageNum) {
 
         Page<SmsHomeAdvertise> page = new Page<>();
         LambdaQueryWrapper<SmsHomeAdvertise> lambda = new LambdaQueryWrapper<>();
@@ -84,6 +84,6 @@ public class SmsHomeAdvertiseServiceImpl extends SmsHomeAdvertiseRepositoryImpl 
             }
         }
         lambda.orderByDesc(SmsHomeAdvertise::getSort);
-        return list(lambda);
+        return page(page, lambda);
     }
 }

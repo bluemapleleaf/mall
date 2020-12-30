@@ -11,8 +11,7 @@ import com.macro.mall.ums.model.UmsMember;
 import com.macro.mall.ums.model.UmsMemberLevel;
 import com.macro.mall.ums.service.UmsMemberLevelRepository;
 import com.macro.mall.ums.service.impl.UmsMemberRepositoryImpl;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.authentication.BadCredentialsException;
@@ -34,11 +33,13 @@ import java.util.Random;
 
 /**
  * 会员管理Service实现类
- * Created by macro on 2018/8/3.
+ *
+ * @author dongjb
+ * @date 2020/11/30
  */
+@Slf4j
 @Service
 public class UmsMemberServiceImpl extends UmsMemberRepositoryImpl implements UmsMemberService {
-    private static final Logger LOGGER = LoggerFactory.getLogger(UmsMemberServiceImpl.class);
     @Autowired
     private PasswordEncoder passwordEncoder;
     @Autowired
@@ -64,7 +65,7 @@ public class UmsMemberServiceImpl extends UmsMemberRepositoryImpl implements Ums
     }
 
     @Override
-    public UmsMember getById(Long id) {
+    public UmsMember getItemById(Long id) {
         return getById(id);
     }
 
@@ -114,7 +115,7 @@ public class UmsMemberServiceImpl extends UmsMemberRepositoryImpl implements Ums
     @Override
     public void updatePassword(String telephone, String password, String authCode) {
         LambdaQueryWrapper<UmsMember> lambdaQueryWrapper = new LambdaQueryWrapper<>();
-        lambdaQueryWrapper.or().eq(UmsMember::getPhone, telephone);
+        lambdaQueryWrapper.eq(UmsMember::getPhone, telephone);
         List<UmsMember> memberList = list(lambdaQueryWrapper);
         if(CollectionUtils.isEmpty(memberList)){
             Asserts.fail("该账号不存在");
@@ -168,7 +169,7 @@ public class UmsMemberServiceImpl extends UmsMemberRepositoryImpl implements Ums
             SecurityContextHolder.getContext().setAuthentication(authentication);
             token = jwtTokenUtil.generateToken(userDetails);
         } catch (AuthenticationException e) {
-            LOGGER.warn("登录异常:{}", e.getMessage());
+            log.warn("登录异常:{}", e.getMessage());
         }
         return token;
     }
@@ -178,7 +179,12 @@ public class UmsMemberServiceImpl extends UmsMemberRepositoryImpl implements Ums
         return jwtTokenUtil.refreshHeadToken(token);
     }
 
-    //对输入的验证码进行校验
+    /**
+     * 对输入的验证码进行校验
+     * @param authCode 验证码
+     * @param telephone 手机号码
+     * @return 是否成功
+     */
     private boolean verifyAuthCode(String authCode, String telephone){
         if(StringUtils.isEmpty(authCode)){
             return false;

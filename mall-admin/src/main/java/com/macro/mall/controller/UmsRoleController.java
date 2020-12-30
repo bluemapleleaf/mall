@@ -2,7 +2,6 @@ package com.macro.mall.controller;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.macro.mall.common.api.CommonPage;
-import com.macro.mall.common.api.CommonPagePlus;
 import com.macro.mall.common.api.CommonResult;
 import com.macro.mall.ums.model.*;
 import com.macro.mall.service.UmsRoleService;
@@ -77,7 +76,7 @@ public class UmsRoleController {
                                                   @RequestParam(value = "pageSize", defaultValue = "5") Integer pageSize,
                                                   @RequestParam(value = "pageNum", defaultValue = "1") Integer pageNum) {
         Page<UmsRole> roleList = roleService.list(keyword, pageSize, pageNum);
-        return CommonResult.success(CommonPagePlus.restPage(roleList));
+        return CommonResult.success(CommonPage.restPage(roleList));
     }
 
     @ApiOperation("修改角色状态")

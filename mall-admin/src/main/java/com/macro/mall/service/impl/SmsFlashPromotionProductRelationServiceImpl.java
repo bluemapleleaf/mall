@@ -1,7 +1,8 @@
 package com.macro.mall.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
-import com.github.pagehelper.PageHelper;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.macro.mall.service.SmsFlashPromotionProductRelationService;
 import com.macro.mall.sms.dto.SmsFlashPromotionProduct;
 import com.macro.mall.sms.model.SmsFlashPromotionProductRelation;
@@ -41,9 +42,9 @@ public class SmsFlashPromotionProductRelationServiceImpl extends SmsFlashPromoti
     }
 
     @Override
-    public List<SmsFlashPromotionProduct> list(Long flashPromotionId, Long flashPromotionSessionId, Integer pageSize, Integer pageNum) {
-        PageHelper.startPage(pageNum,pageSize);
-        return getList(flashPromotionId,flashPromotionSessionId);
+    public Page<SmsFlashPromotionProduct> list(Long flashPromotionId, Long flashPromotionSessionId, Integer pageSize, Integer pageNum) {
+        Page<SmsFlashPromotionProduct> page = new Page<>(pageNum,pageSize);
+        return getList(page, flashPromotionId,flashPromotionSessionId);
     }
 
     @Override

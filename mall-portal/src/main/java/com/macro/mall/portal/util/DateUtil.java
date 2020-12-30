@@ -5,7 +5,9 @@ import java.util.Date;
 
 /**
  * 日期工具类
- * Created by macro on 2019/1/29.
+ *
+ * @author dongjb
+ * @date 2020/11/30
  */
 public class DateUtil {
 

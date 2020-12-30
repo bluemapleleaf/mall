@@ -1,6 +1,7 @@
 package com.macro.mall.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.github.pagehelper.PageHelper;
 import com.macro.mall.service.SmsFlashPromotionService;
 import com.macro.mall.sms.model.SmsFlashPromotion;
@@ -49,12 +50,12 @@ public class SmsFlashPromotionServiceImpl extends SmsFlashPromotionRepositoryImp
     }
 
     @Override
-    public List<SmsFlashPromotion> list(String keyword, Integer pageSize, Integer pageNum) {
-        PageHelper.startPage(pageNum, pageSize);
+    public Page<SmsFlashPromotion> list(String keyword, Integer pageSize, Integer pageNum) {
+        Page<SmsFlashPromotion> page = new Page<>(pageNum, pageSize);
         LambdaQueryWrapper<SmsFlashPromotion> lambdaQueryWrapper = new LambdaQueryWrapper<>();
         if (!StringUtils.isEmpty(keyword)) {
             lambdaQueryWrapper.like(SmsFlashPromotion::getTitle, keyword);
         }
-        return list(lambdaQueryWrapper);
+        return page(page, lambdaQueryWrapper);
     }
 }

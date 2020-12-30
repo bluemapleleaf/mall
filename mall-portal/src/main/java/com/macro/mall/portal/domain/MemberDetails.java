@@ -10,10 +10,12 @@ import java.util.Collection;
 
 /**
  * 会员详情封装
- * Created by macro on 2018/8/3.
+ *
+ * @author dongjb
+ * @date 2020/11/30
  */
 public class MemberDetails implements UserDetails {
-    private UmsMember umsMember;
+    private final UmsMember umsMember;
 
     public MemberDetails(UmsMember umsMember) {
         this.umsMember = umsMember;

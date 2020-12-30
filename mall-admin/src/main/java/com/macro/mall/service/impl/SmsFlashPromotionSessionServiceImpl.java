@@ -54,7 +54,7 @@ public class SmsFlashPromotionSessionServiceImpl extends SmsFlashPromotionSessio
     }
 
     @Override
-    public List<SmsFlashPromotionSession> list() {
+    public List<SmsFlashPromotionSession> listAll() {
         return list();
     }
 
