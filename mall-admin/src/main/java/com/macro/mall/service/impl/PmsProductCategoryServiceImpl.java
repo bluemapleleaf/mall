@@ -3,7 +3,7 @@ package com.macro.mall.service.impl;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.macro.mall.dto.PmsProductCategoryParam;
+import com.macro.mall.domain.PmsProductCategoryParam;
 import com.macro.mall.pms.model.PmsProduct;
 import com.macro.mall.pms.model.PmsProductCategory;
 import com.macro.mall.pms.model.PmsProductCategoryAttributeRelation;

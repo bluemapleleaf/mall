@@ -68,7 +68,7 @@ services:
       - 4561:4561
       - 4562:4562
       - 4563:4563
-  kibana:
+  ykibana:
     image: kibana:7.6.2
     container_name: kibana
     links:

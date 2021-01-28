@@ -3,7 +3,7 @@ package com.macro.mall.controller;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.macro.mall.common.api.CommonPage;
 import com.macro.mall.common.api.CommonResult;
-import com.macro.mall.dto.*;
+import com.macro.mall.domain.*;
 import com.macro.mall.oms.dto.OmsOrderDetail;
 import com.macro.mall.oms.model.OmsOrder;
 import com.macro.mall.service.OmsOrderService;

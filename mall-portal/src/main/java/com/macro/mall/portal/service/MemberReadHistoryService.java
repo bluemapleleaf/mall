@@ -1,8 +1,7 @@
 package com.macro.mall.portal.service;
 
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.macro.mall.portal.domain.MemberReadHistory;
-import org.springframework.data.domain.Page;
-
 import java.util.List;
 
 /**

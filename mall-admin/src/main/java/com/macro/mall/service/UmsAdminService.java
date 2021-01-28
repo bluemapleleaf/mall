@@ -1,8 +1,8 @@
 package com.macro.mall.service;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.macro.mall.dto.UmsAdminParam;
-import com.macro.mall.dto.UpdateAdminPasswordParam;
+import com.macro.mall.domain.UmsAdminParam;
+import com.macro.mall.domain.UpdateAdminPasswordParam;
 import com.macro.mall.ums.model.*;
 import com.macro.mall.ums.service.UmsAdminRepository;
 import org.springframework.security.core.userdetails.UserDetails;

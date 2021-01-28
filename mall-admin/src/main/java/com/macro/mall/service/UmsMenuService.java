@@ -1,7 +1,7 @@
 package com.macro.mall.service;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.macro.mall.dto.UmsMenuNode;
+import com.macro.mall.domain.UmsMenuNode;
 import com.macro.mall.ums.model.UmsMenu;
 import com.macro.mall.ums.service.UmsMenuRepository;
 

@@ -1,7 +1,7 @@
 package com.macro.mall.service;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.macro.mall.dto.PmsBrandParam;
+import com.macro.mall.domain.PmsBrandParam;
 import com.macro.mall.pms.model.PmsBrand;
 import com.macro.mall.pms.service.PmsBrandRepository;
 import org.springframework.transaction.annotation.Transactional;

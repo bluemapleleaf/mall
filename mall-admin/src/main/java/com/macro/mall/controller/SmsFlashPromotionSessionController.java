@@ -1,7 +1,7 @@
 package com.macro.mall.controller;
 
 import com.macro.mall.common.api.CommonResult;
-import com.macro.mall.dto.SmsFlashPromotionSessionDetail;
+import com.macro.mall.domain.SmsFlashPromotionSessionDetail;
 import com.macro.mall.service.SmsFlashPromotionSessionService;
 import com.macro.mall.sms.model.SmsFlashPromotionSession;
 import io.swagger.annotations.Api;

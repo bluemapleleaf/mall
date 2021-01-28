@@ -4,7 +4,7 @@ package com.macro.mall;
 import cn.hutool.json.JSONUtil;
 import com.macro.mall.dao.PmsMemberPriceDao;
 import com.macro.mall.dao.PmsProductDao;
-import com.macro.mall.dto.PmsProductResult;
+import com.macro.mall.domain.PmsProductResult;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;

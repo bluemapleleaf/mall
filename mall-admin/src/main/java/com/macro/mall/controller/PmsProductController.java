@@ -3,7 +3,7 @@ package com.macro.mall.controller;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.macro.mall.common.api.CommonPage;
 import com.macro.mall.common.api.CommonResult;
-import com.macro.mall.dto.PmsProductQueryParam;
+import com.macro.mall.domain.PmsProductQueryParam;
 import com.macro.mall.pms.dto.PmsProductParam;
 import com.macro.mall.pms.dto.PmsProductResult;
 import com.macro.mall.pms.model.PmsProduct;

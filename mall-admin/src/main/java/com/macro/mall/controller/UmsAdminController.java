@@ -4,9 +4,9 @@ import cn.hutool.core.collection.CollUtil;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.macro.mall.common.api.CommonPage;
 import com.macro.mall.common.api.CommonResult;
-import com.macro.mall.dto.UmsAdminLoginParam;
-import com.macro.mall.dto.UmsAdminParam;
-import com.macro.mall.dto.UpdateAdminPasswordParam;
+import com.macro.mall.domain.UmsAdminLoginParam;
+import com.macro.mall.domain.UmsAdminParam;
+import com.macro.mall.domain.UpdateAdminPasswordParam;
 import com.macro.mall.ums.model.UmsAdmin;
 import com.macro.mall.ums.model.UmsRole;
 import com.macro.mall.service.UmsAdminService;
@@ -26,7 +26,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-import static com.macro.mall.constant.PasswordUpdateStatusEnum.*;
+import static com.macro.mall.enums.PasswordUpdateStatusEnum.*;
 
 /**
  * 后台用户管理

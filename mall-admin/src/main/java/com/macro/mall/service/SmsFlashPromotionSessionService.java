@@ -1,6 +1,6 @@
 package com.macro.mall.service;
 
-import com.macro.mall.dto.SmsFlashPromotionSessionDetail;
+import com.macro.mall.domain.SmsFlashPromotionSessionDetail;
 import com.macro.mall.sms.model.SmsFlashPromotionSession;
 import com.macro.mall.sms.service.SmsFlashPromotionSessionRepository;
 

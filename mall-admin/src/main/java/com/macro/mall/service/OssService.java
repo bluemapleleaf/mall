@@ -1,7 +1,7 @@
 package com.macro.mall.service;
 
-import com.macro.mall.dto.OssCallbackResult;
-import com.macro.mall.dto.OssPolicyResult;
+import com.macro.mall.domain.OssCallbackResult;
+import com.macro.mall.domain.OssPolicyResult;
 
 import javax.servlet.http.HttpServletRequest;
 

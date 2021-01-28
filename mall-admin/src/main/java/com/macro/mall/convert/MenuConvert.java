@@ -1,6 +1,6 @@
 package com.macro.mall.convert;
 
-import com.macro.mall.dto.UmsMenuNode;
+import com.macro.mall.domain.UmsMenuNode;
 import com.macro.mall.ums.model.UmsMenu;
 import org.mapstruct.Mapper;
 import org.mapstruct.ReportingPolicy;

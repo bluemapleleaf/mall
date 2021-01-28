@@ -1,11 +1,10 @@
 package com.macro.mall.controller;
 
 import cn.hutool.core.collection.CollUtil;
-import cn.hutool.core.util.ArrayUtil;
 import cn.hutool.json.JSONUtil;
 import com.macro.mall.common.api.CommonResult;
-import com.macro.mall.dto.BucketPolicyConfigDto;
-import com.macro.mall.dto.MinioUploadDto;
+import com.macro.mall.domain.BucketPolicyConfigDto;
+import com.macro.mall.domain.MinioUploadDto;
 import io.minio.*;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;

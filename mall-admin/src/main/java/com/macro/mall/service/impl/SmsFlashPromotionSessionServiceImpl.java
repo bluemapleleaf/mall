@@ -1,7 +1,7 @@
 package com.macro.mall.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
-import com.macro.mall.dto.SmsFlashPromotionSessionDetail;
+import com.macro.mall.domain.SmsFlashPromotionSessionDetail;
 import com.macro.mall.service.SmsFlashPromotionProductRelationService;
 import com.macro.mall.service.SmsFlashPromotionSessionService;
 import com.macro.mall.sms.model.SmsFlashPromotionSession;

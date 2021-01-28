@@ -1,12 +1,12 @@
 package com.macro.mall.portal.service.impl;
 
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.macro.mall.portal.domain.MemberBrandAttention;
 import com.macro.mall.portal.repository.MemberBrandAttentionRepository;
 import com.macro.mall.portal.service.MemberAttentionService;
 import com.macro.mall.portal.service.UmsMemberService;
 import com.macro.mall.ums.model.UmsMember;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;

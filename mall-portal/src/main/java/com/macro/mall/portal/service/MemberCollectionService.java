@@ -1,7 +1,7 @@
 package com.macro.mall.portal.service;
 
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.macro.mall.portal.domain.MemberProductCollection;
-import org.springframework.data.domain.Page;
 
 /**
  * 会员商品收藏管理Service

@@ -3,7 +3,7 @@ package com.macro.mall.controller;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.macro.mall.common.api.CommonPage;
 import com.macro.mall.common.api.CommonResult;
-import com.macro.mall.dto.PmsBrandParam;
+import com.macro.mall.domain.PmsBrandParam;
 import com.macro.mall.pms.model.PmsBrand;
 import com.macro.mall.service.PmsBrandService;
 import io.swagger.annotations.Api;

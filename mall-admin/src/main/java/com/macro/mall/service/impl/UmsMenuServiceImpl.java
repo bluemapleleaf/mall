@@ -3,7 +3,7 @@ package com.macro.mall.service.impl;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.macro.mall.convert.MenuConvert;
-import com.macro.mall.dto.UmsMenuNode;
+import com.macro.mall.domain.UmsMenuNode;
 import com.macro.mall.service.UmsMenuService;
 import com.macro.mall.ums.model.UmsMenu;
 import com.macro.mall.ums.service.impl.UmsMenuRepositoryImpl;

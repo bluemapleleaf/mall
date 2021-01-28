@@ -1,6 +1,6 @@
 package com.macro.mall.convert;
 
-import com.macro.mall.dto.UmsAdminParam;
+import com.macro.mall.domain.UmsAdminParam;
 import com.macro.mall.ums.model.UmsAdmin;
 import org.mapstruct.Mapper;
 import org.mapstruct.ReportingPolicy;

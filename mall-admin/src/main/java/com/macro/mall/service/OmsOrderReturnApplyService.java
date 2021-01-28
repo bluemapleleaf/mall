@@ -1,8 +1,8 @@
 package com.macro.mall.service;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.macro.mall.dto.OmsReturnApplyQueryParam;
-import com.macro.mall.dto.OmsUpdateStatusParam;
+import com.macro.mall.domain.OmsReturnApplyQueryParam;
+import com.macro.mall.domain.OmsUpdateStatusParam;
 import com.macro.mall.oms.dto.OmsOrderReturnApplyResult;
 import com.macro.mall.oms.model.OmsOrderReturnApply;
 import com.macro.mall.oms.service.OmsOrderReturnApplyRepository;
