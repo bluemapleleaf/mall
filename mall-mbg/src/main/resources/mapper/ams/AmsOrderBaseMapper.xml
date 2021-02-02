@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.macro.mall.ams.mapper.AmsOrderBaseMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.macro.mall.ams.model.AmsOrderBase">
+        <id column="orderNo" property="orderNo" />
+        <result column="ordertype" property="ordertype" />
+        <result column="businessid" property="businessid" />
+        <result column="recebusinessid" property="recebusinessid" />
+        <result column="businessname" property="businessname" />
+        <result column="businesstradeno" property="businesstradeno" />
+        <result column="businesssubaccountcode" property="businesssubaccountcode" />
+        <result column="custid" property="custid" />
+        <result column="rececustid" property="rececustid" />
+        <result column="custsubaccountcode" property="custsubaccountcode" />
+        <result column="paytype" property="paytype" />
+        <result column="paytypename" property="paytypename" />
+        <result column="amont" property="amont" />
+        <result column="ratio" property="ratio" />
+        <result column="actamont" property="actamont" />
+        <result column="accountdate" property="accountdate" />
+        <result column="statementdate" property="statementdate" />
+        <result column="bindaccountdate" property="bindaccountdate" />
+        <result column="createdate" property="createdate" />
+        <result column="channel" property="channel" />
+        <result column="description" property="description" />
+        <result column="status" property="status" />
+        <result column="checkstatus" property="checkstatus" />
+        <result column="tradeno" property="tradeno" />
+        <result column="tradestatus" property="tradestatus" />
+        <result column="notifydate" property="notifydate" />
+        <result column="processdate" property="processdate" />
+        <result column="userid" property="userid" />
+        <result column="lastmodifydate" property="lastmodifydate" />
+        <result column="refundamont" property="refundamont" />
+        <result column="refundactamont" property="refundactamont" />
+        <result column="extamont1" property="extamont1" />
+        <result column="extamont2" property="extamont2" />
+        <result column="extamont3" property="extamont3" />
+        <result column="extamont4" property="extamont4" />
+        <result column="extamont5" property="extamont5" />
+        <result column="extamont6" property="extamont6" />
+        <result column="extamont7" property="extamont7" />
+        <result column="extamont8" property="extamont8" />
+        <result column="extamont9" property="extamont9" />
+        <result column="extamont10" property="extamont10" />
+        <result column="remark1" property="remark1" />
+        <result column="remark2" property="remark2" />
+        <result column="remark3" property="remark3" />
+        <result column="remark4" property="remark4" />
+        <result column="remark5" property="remark5" />
+        <result column="field1" property="field1" />
+        <result column="field2" property="field2" />
+        <result column="field3" property="field3" />
+        <result column="field4" property="field4" />
+        <result column="field5" property="field5" />
+        <result column="field6" property="field6" />
+        <result column="field7" property="field7" />
+        <result column="field8" property="field8" />
+        <result column="field9" property="field9" />
+        <result column="field10" property="field10" />
+    </resultMap>
+
+</mapper>

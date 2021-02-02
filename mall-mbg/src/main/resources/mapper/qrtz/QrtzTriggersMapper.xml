@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.macro.mall.qrtz.mapper.QrtzTriggersMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.macro.mall.qrtz.model.QrtzTriggers">
+        <id column="sched_name" property="schedName" />
+        <result column="trigger_name" property="triggerName" />
+        <result column="trigger_group" property="triggerGroup" />
+        <result column="job_name" property="jobName" />
+        <result column="job_group" property="jobGroup" />
+        <result column="description" property="description" />
+        <result column="next_fire_time" property="nextFireTime" />
+        <result column="prev_fire_time" property="prevFireTime" />
+        <result column="priority" property="priority" />
+        <result column="trigger_state" property="triggerState" />
+        <result column="trigger_type" property="triggerType" />
+        <result column="start_time" property="startTime" />
+        <result column="end_time" property="endTime" />
+        <result column="calendar_name" property="calendarName" />
+        <result column="misfire_instr" property="misfireInstr" />
+        <result column="job_data" property="jobData" javaType="java.sql.Blob" jdbcType="BLOB" typeHandler="org.apache.ibatis.type.BlobTypeHandler"/>
+    </resultMap>
+
+</mapper>

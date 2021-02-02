@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.macro.mall.qrtz.mapper.QrtzFiredTriggersMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.macro.mall.qrtz.model.QrtzFiredTriggers">
+        <id column="sched_name" property="schedName" />
+        <result column="entry_id" property="entryId" />
+        <result column="trigger_name" property="triggerName" />
+        <result column="trigger_group" property="triggerGroup" />
+        <result column="instance_name" property="instanceName" />
+        <result column="fired_time" property="firedTime" />
+        <result column="sched_time" property="schedTime" />
+        <result column="priority" property="priority" />
+        <result column="state" property="state" />
+        <result column="job_name" property="jobName" />
+        <result column="job_group" property="jobGroup" />
+        <result column="is_nonconcurrent" property="isNonconcurrent" />
+        <result column="requests_recovery" property="requestsRecovery" />
+    </resultMap>
+
+</mapper>

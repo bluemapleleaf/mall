@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.macro.mall.qrtz.mapper.QrtzCalendarsMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.macro.mall.qrtz.model.QrtzCalendars">
+        <id column="sched_name" property="schedName" />
+        <result column="calendar_name" property="calendarName" />
+        <result column="calendar" property="calendar" javaType="java.sql.Blob" jdbcType="BLOB" typeHandler="org.apache.ibatis.type.BlobTypeHandler"/>
+    </resultMap>
+
+</mapper>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.macro.mall.ams.mapper.AmsBusinessAccountMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.macro.mall.ams.model.AmsBusinessAccount">
+        <id column="id" property="id" />
+        <result column="businessid" property="businessid" />
+        <result column="userid" property="userid" />
+        <result column="businessname" property="businessname" />
+        <result column="regioncode" property="regioncode" />
+        <result column="regionname" property="regionname" />
+        <result column="industrycode" property="industrycode" />
+        <result column="industryname" property="industryname" />
+        <result column="isdefault" property="isdefault" />
+        <result column="businesslicense" property="businesslicense" />
+        <result column="name" property="name" />
+        <result column="certtype" property="certtype" />
+        <result column="certno" property="certno" />
+        <result column="certpicture" property="certpicture" />
+        <result column="telephone" property="telephone" />
+        <result column="bankaccount" property="bankaccount" />
+        <result column="accountname" property="accountname" />
+        <result column="bank" property="bank" />
+        <result column="createdate" property="createdate" />
+        <result column="creator" property="creator" />
+        <result column="custid" property="custid" />
+        <result column="businesskey" property="businesskey" />
+        <result column="publickey" property="publickey" />
+        <result column="channel" property="channel" />
+        <result column="status" property="status" />
+        <result column="settlementtype" property="settlementtype" />
+        <result column="email" property="email" />
+        <result column="edituserid" property="edituserid" />
+        <result column="authuserid" property="authuserid" />
+    </resultMap>
+
+</mapper>

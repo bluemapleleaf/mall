@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.macro.mall.ams.mapper.AmsBusinessBindinfoMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.macro.mall.ams.model.AmsBusinessBindinfo">
+        <id column="id" property="id" />
+        <result column="businessid" property="businessid" />
+        <result column="type" property="type" />
+        <result column="isdefault" property="isdefault" />
+        <result column="createdate" property="createdate" />
+        <result column="status" property="status" />
+        <result column="bankname" property="bankname" />
+        <result column="name" property="name" />
+        <result column="telephone" property="telephone" />
+        <result column="account" property="account" />
+        <result column="certtype" property="certtype" />
+        <result column="certno" property="certno" />
+        <result column="partner" property="partner" />
+        <result column="partnerkey" property="partnerkey" />
+        <result column="appid" property="appid" />
+        <result column="appsecret" property="appsecret" />
+        <result column="appsingn" property="appsingn" />
+        <result column="bundleid" property="bundleid" />
+        <result column="package" property="package" />
+        <result column="seller_email" property="sellerEmail" />
+        <result column="seller_id" property="sellerId" />
+        <result column="private_key" property="privateKey" />
+        <result column="edituserid" property="edituserid" />
+        <result column="authuserid" property="authuserid" />
+    </resultMap>
+
+</mapper>

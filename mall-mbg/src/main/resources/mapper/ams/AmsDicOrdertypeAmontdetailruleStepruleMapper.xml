@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.macro.mall.ams.mapper.AmsDicOrdertypeAmontdetailruleStepruleMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.macro.mall.ams.model.AmsDicOrdertypeAmontdetailruleSteprule">
+        <id column="id" property="id" />
+        <result column="amontruleid" property="amontruleid" />
+        <result column="beginamont" property="beginamont" />
+        <result column="endamont" property="endamont" />
+        <result column="calculatetype" property="calculatetype" />
+        <result column="param" property="param" />
+        <result column="createdate" property="createdate" />
+        <result column="modifydate" property="modifydate" />
+        <result column="userid" property="userid" />
+    </resultMap>
+
+</mapper>

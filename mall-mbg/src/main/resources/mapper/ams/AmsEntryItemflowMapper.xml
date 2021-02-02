@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.macro.mall.ams.mapper.AmsEntryItemflowMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.macro.mall.ams.model.AmsEntryItemflow">
+        <id column="id" property="id" />
+        <result column="orderno" property="orderno" />
+        <result column="businessid" property="businessid" />
+        <result column="accountitemfirstname" property="accountitemfirstname" />
+        <result column="accountitemfirstcode" property="accountitemfirstcode" />
+        <result column="accountitemsecdname" property="accountitemsecdname" />
+        <result column="accountitemsecdcode" property="accountitemsecdcode" />
+        <result column="accountitemthirdname" property="accountitemthirdname" />
+        <result column="accountitemthirdcode" property="accountitemthirdcode" />
+        <result column="accountsubitemname" property="accountsubitemname" />
+        <result column="accountsubitemcode" property="accountsubitemcode" />
+        <result column="type" property="type" />
+        <result column="balancedirect" property="balancedirect" />
+        <result column="amont" property="amont" />
+        <result column="accountdate" property="accountdate" />
+        <result column="statementdate" property="statementdate" />
+        <result column="bindaccountdate" property="bindaccountdate" />
+        <result column="createdate" property="createdate" />
+        <result column="field1" property="field1" />
+        <result column="field2" property="field2" />
+        <result column="field3" property="field3" />
+        <result column="field4" property="field4" />
+        <result column="field5" property="field5" />
+        <result column="field6" property="field6" />
+        <result column="field7" property="field7" />
+        <result column="field8" property="field8" />
+        <result column="field9" property="field9" />
+        <result column="field10" property="field10" />
+    </resultMap>
+
+</mapper>

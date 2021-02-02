@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.macro.mall.ams.mapper.AmsCustSubaccountMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.macro.mall.ams.model.AmsCustSubaccount">
+        <id column="id" property="id" />
+        <result column="custid" property="custid" />
+        <result column="code" property="code" />
+        <result column="status" property="status" />
+        <result column="type" property="type" />
+        <result column="createdate" property="createdate" />
+        <result column="balance" property="balance" />
+        <result column="money" property="money" />
+        <result column="edituserid" property="edituserid" />
+        <result column="authuserid" property="authuserid" />
+    </resultMap>
+
+</mapper>

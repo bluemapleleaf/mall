@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.macro.mall.ams.mapper.AmsDicDateparamMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.macro.mall.ams.model.AmsDicDateparam">
+        <id column="id" property="id" />
+        <result column="name" property="name" />
+        <result column="code" property="code" />
+        <result column="remark" property="remark" />
+        <result column="type" property="type" />
+        <result column="status" property="status" />
+        <result column="parent" property="parent" />
+        <result column="parentid" property="parentid" />
+        <result column="createdate" property="createdate" />
+        <result column="modifydate" property="modifydate" />
+        <result column="userid" property="userid" />
+        <result column="field1" property="field1" />
+        <result column="field2" property="field2" />
+        <result column="field3" property="field3" />
+        <result column="field4" property="field4" />
+        <result column="field5" property="field5" />
+        <result column="field6" property="field6" />
+        <result column="field7" property="field7" />
+        <result column="field8" property="field8" />
+        <result column="field9" property="field9" />
+        <result column="field10" property="field10" />
+    </resultMap>
+
+</mapper>

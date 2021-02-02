@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.macro.mall.qrtz.mapper.QrtzSimpleTriggersMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.macro.mall.qrtz.model.QrtzSimpleTriggers">
+        <id column="sched_name" property="schedName" />
+        <result column="trigger_name" property="triggerName" />
+        <result column="trigger_group" property="triggerGroup" />
+        <result column="repeat_count" property="repeatCount" />
+        <result column="repeat_interval" property="repeatInterval" />
+        <result column="times_triggered" property="timesTriggered" />
+    </resultMap>
+
+</mapper>

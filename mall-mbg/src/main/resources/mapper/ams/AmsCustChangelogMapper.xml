@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.macro.mall.ams.mapper.AmsCustChangelogMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.macro.mall.ams.model.AmsCustChangelog">
+        <id column="id" property="id" />
+        <result column="custid" property="custid" />
+        <result column="type" property="type" />
+        <result column="changedate" property="changedate" />
+        <result column="changedirect" property="changedirect" />
+        <result column="amont" property="amont" />
+        <result column="money" property="money" />
+    </resultMap>
+
+</mapper>

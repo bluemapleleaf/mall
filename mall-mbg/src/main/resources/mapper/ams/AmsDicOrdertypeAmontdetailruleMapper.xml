@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.macro.mall.ams.mapper.AmsDicOrdertypeAmontdetailruleMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.macro.mall.ams.model.AmsDicOrdertypeAmontdetailrule">
+        <id column="id" property="id" />
+        <result column="ordertypeid" property="ordertypeid" />
+        <result column="name" property="name" />
+        <result column="ruletype" property="ruletype" />
+        <result column="calculatetype" property="calculatetype" />
+        <result column="calculatemode" property="calculatemode" />
+        <result column="basictype" property="basictype" />
+        <result column="param" property="param" />
+        <result column="min" property="min" />
+        <result column="max" property="max" />
+        <result column="decomposetype" property="decomposetype" />
+        <result column="decimalprocess" property="decimalprocess" />
+        <result column="sort" property="sort" />
+        <result column="createdate" property="createdate" />
+        <result column="modifydate" property="modifydate" />
+        <result column="userid" property="userid" />
+    </resultMap>
+
+</mapper>

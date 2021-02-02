@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.macro.mall.ams.mapper.AmsBusinessInneraccountMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.macro.mall.ams.model.AmsBusinessInneraccount">
+        <id column="id" property="id" />
+        <result column="businessid" property="businessid" />
+        <result column="innerid" property="innerid" />
+        <result column="accountitemfirstname" property="accountitemfirstname" />
+        <result column="accountitemfirstcode" property="accountitemfirstcode" />
+        <result column="accountitemsecdname" property="accountitemsecdname" />
+        <result column="accountitemsecdcode" property="accountitemsecdcode" />
+        <result column="accountitemthirdname" property="accountitemthirdname" />
+        <result column="accountitemthirdcode" property="accountitemthirdcode" />
+        <result column="accountsubitemname" property="accountsubitemname" />
+        <result column="accountsubitemcode" property="accountsubitemcode" />
+        <result column="type" property="type" />
+        <result column="balance" property="balance" />
+        <result column="accountdate" property="accountdate" />
+        <result column="createdate" property="createdate" />
+        <result column="updatedate" property="updatedate" />
+    </resultMap>
+
+</mapper>

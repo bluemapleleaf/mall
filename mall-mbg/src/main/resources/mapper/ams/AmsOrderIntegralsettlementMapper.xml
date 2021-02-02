@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.macro.mall.ams.mapper.AmsOrderIntegralsettlementMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.macro.mall.ams.model.AmsOrderIntegralsettlement">
+        <id column="orderNo" property="orderNo" />
+        <result column="money" property="money" />
+        <result column="bbindtype" property="bbindtype" />
+        <result column="buyerbankname" property="buyerbankname" />
+        <result column="buyername" property="buyername" />
+        <result column="buyeraccount" property="buyeraccount" />
+        <result column="beforebalance" property="beforebalance" />
+        <result column="afterbalance" property="afterbalance" />
+        <result column="remark" property="remark" />
+        <result column="settlementdate" property="settlementdate" />
+    </resultMap>
+
+</mapper>

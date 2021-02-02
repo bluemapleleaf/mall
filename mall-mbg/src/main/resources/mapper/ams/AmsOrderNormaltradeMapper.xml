@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.macro.mall.ams.mapper.AmsOrderNormaltradeMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.macro.mall.ams.model.AmsOrderNormaltrade">
+        <id column="orderno" property="orderno" />
+        <result column="tradedescription" property="tradedescription" />
+        <result column="shopno" property="shopno" />
+        <result column="reserve1" property="reserve1" />
+        <result column="reserve2" property="reserve2" />
+        <result column="reserve3" property="reserve3" />
+        <result column="reserve4" property="reserve4" />
+        <result column="reserve5" property="reserve5" />
+        <result column="reserve6" property="reserve6" />
+        <result column="reserve7" property="reserve7" />
+        <result column="reserve8" property="reserve8" />
+        <result column="reserve9" property="reserve9" />
+        <result column="reserve10" property="reserve10" />
+        <result column="reserve11" property="reserve11" />
+        <result column="reserve12" property="reserve12" />
+        <result column="reserve13" property="reserve13" />
+        <result column="reserve14" property="reserve14" />
+        <result column="reserve15" property="reserve15" />
+        <result column="reserve16" property="reserve16" />
+        <result column="reserve17" property="reserve17" />
+        <result column="reserve18" property="reserve18" />
+        <result column="reserve19" property="reserve19" />
+        <result column="reserve20" property="reserve20" />
+    </resultMap>
+
+</mapper>
