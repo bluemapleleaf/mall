@@ -29,7 +29,12 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-quartz</artifactId>
         </dependency>
-
+        <!-- 邮件相关依赖 start ************************ -->
+        <!-- Spring Boot 邮件依赖 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-mail</artifactId>
+        </dependency>
         <!--jasypt配置文件加解密-->
         <dependency>
             <groupId>com.github.ulisesbocchio</groupId>
@@ -46,6 +51,7 @@
             <artifactId>thymeleaf-spring5</artifactId>
             <scope>test</scope>
         </dependency>
+        <!-- 邮件相关依赖 end ************************ -->
     </dependencies>
 
     <build>

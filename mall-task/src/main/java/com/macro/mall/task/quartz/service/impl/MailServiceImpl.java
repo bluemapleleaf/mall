@@ -19,8 +19,8 @@ import java.io.File;
  * 邮件接口
  * </p>
  *
- * @author yangkai.shen
- * @date Created in 2018-11-21 13:49
+ * @author dongjb
+ * @date 2021/02/02
  */
 @Service
 public class MailServiceImpl implements MailService {

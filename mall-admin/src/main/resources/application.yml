@@ -1,3 +1,5 @@
+server:
+  port: 8088
 spring:
   application:
     name: mall-admin
@@ -73,7 +75,7 @@ aliyun:
       prefix: mall/images/ # 上传文件夹路径前缀
 
 minio:
-  endpoint: http://192.168.1.72:9000 #MinIO服务所在地址
+  endpoint: http://localhost:9000 #MinIO服务所在地址
   bucketName: mall #存储桶名称
   accessKey: minioadmin #访问的key
   secretKey: minioadmin #访问的秘钥

@@ -24,8 +24,8 @@ import javax.validation.Valid;
  * Job Controller
  * </p>
  *
- * @author yangkai.shen
- * @date Created in 2018-11-26 13:23
+ * @author dongjb
+ * @date 2021/02/02
  */
 @RestController
 @RequestMapping("/job")
@@ -116,17 +116,6 @@ public class JobController {
         if (ObjectUtil.isNull(pageSize)) {
             pageSize = 10;
         }
-
-        // 你的邮箱密码
-        String password = "djb%7412801";
-        // 加密后的密码(注意：配置上去的时候需要加 ENC(加密密码))
-        String encryptPassword = encryptor.encrypt(password);
-        String decryptPassword = encryptor.decrypt(encryptPassword);
-
-        System.out.println("password = " + password);
-        System.out.println("encryptPassword = " + encryptPassword);
-        System.out.println("decryptPassword = " + decryptPassword);
-
 
         Page<JobAndTrigger> all = jobService.list(currentPage, pageSize);
         return CommonResult.success(CommonPage.restPage(all));
